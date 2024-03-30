@@ -15,16 +15,7 @@ class Airport(models.Model):
     def __str__(self):
         return self.name
     
-class footballPlayer(models.Model):
-    name=models.CharField(max_length=255)
-    sport=models.CharField(max_length=255)
-    team=models.CharField(max_length=255)
-    position=models.CharField(max_length=255)
-    
-    def __str__(self):
-        return self.name
-
-class basketballPlayer(models.Model):
+class Player(models.Model):
     name=models.CharField(max_length=255)
     sport=models.CharField(max_length=255)
     team=models.CharField(max_length=255)
