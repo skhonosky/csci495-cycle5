@@ -22,15 +22,25 @@ class ModelTests(TestCase):
 
         self.assertEqual(str(airport), (airport.name))
 
-    def test_create_player(self):
-        player = models.Player.objects.create(
+    def test_create_footballPlayer(self):
+        footballPlayer = models.footballPlayer.objects.create(
+            name="Travis Kelce",
+            sport="Football",
+            team="Kansas City Chiefs",
+            position="Tight End"
+        )
+
+        self.assertEqual(str(footballPlayer), (footballPlayer.name))
+
+    def test_create_basketballPlayer(self):
+        basketballPlayer = models.basketballPlayer.objects.create(
             name="Lonzo Ball",
             sport="Basketball",
             team="Chicago Bulls",
             position="Point Guard"
         )
 
-        self.assertEqual(str(player), (player.name))
+        self.assertEqual(str(basketballPlayer), (basketballPlayer.name))
 
     def test_create_footballTeam(self):
         footballteam = models.footballTeam.objects.create(
@@ -38,18 +48,18 @@ class ModelTests(TestCase):
             conference="AFC",
             quarterback="Patrick Mahomes",
             city="Kansas City",
-            state="MO",
+            state="MO"
         )
 
         self.assertEqual(str(footballteam), (footballteam.name))
 
     def test_create_basketballTeam(self):
         basketballteam = models.basketballTeam.objects.create(
-            name="Kansas City Chiefs",
+            name="Chicago Bulls",
             conference="Eastern",
             legendary_player="Michael Jordan",
             city="Chicago",
-            state="IL",
+            state="IL"
         )
 
         self.assertEqual(str(basketballteam), (basketballteam.name))

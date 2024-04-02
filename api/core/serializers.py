@@ -1,9 +1,15 @@
 from rest_framework import serializers
-from core.models import Player, footballTeam, basketballTeam
+from core.models import footballPlayer, basketballPlayer, footballTeam, basketballTeam
 
-class playerSerializer(serializers.ModelSerializer):
+class footballPlayerSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Player
+        model = footballPlayer
+        fields = ['name', 'sport', 'team', 'position']
+        read_only_fields = ['id']
+
+class basketballPlayerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = basketballPlayer
         fields = ['name', 'sport', 'team', 'position']
         read_only_fields = ['id']
 
